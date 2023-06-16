@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<section class="body">
+
+  <table class="tabla" border>
+    <tr>
+      <th><h3>Codigo</h3></th>
+      <th><h3>Descripcion</h3></th>
+      <th><h3>Precio</h3></th>
+      <th><h3>borrar</h3></th>
+      <th><h3>Seleccionar</h3></th>
+    </tr>
+    <tr *ngFor="let item of articulos; index as i">
+      <td>{{ item.codigo }}</td>
+      <td>{{ item.descripcion }}</td>
+      <td>{{ item.precio }}</td>
+      <td><button (click)="eliminarArticulo(item)">Borrar?</button></td>
+      <td><button (click)="seleccionarArticulo(item)">Seleccionar</button></td>
+    </tr>
+  </table>
+  <div class="Recibidor">
+    <h1>Agregar o modificar</h1>
+    <input  type="number" [(ngModel)]="art.codigo" placeholder="Código">Codigo<br>
+    <input  type="text" [(ngModel)]="art.descripcion" placeholder="Descripción"><br>
+    <input  type="number" [(ngModel)]="art.precio" placeholder="Precio">Precio<br>
+    <button (click)="agregarArticulo()">Agregar</button>
+    <button (click)="modificarArticulo(art)">Modificar Artículo</button>
+  </div>
+</section>
